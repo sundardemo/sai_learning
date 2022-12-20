@@ -1,1 +1,1 @@
-git checkout -b "04_column_example" && git add . && git commit -m "04_column_example" && git push --set-upstream origin 04_column_example
+git checkout -b "06_row_example" && git add . && git commit -m "06_row_example" && git push --set-upstream origin 06_row_example
