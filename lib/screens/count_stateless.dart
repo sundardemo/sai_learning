@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class CountStatelessScreen extends StatelessWidget {
+  CountStatelessScreen({super.key});
   var count = 0;
 
   @override
@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
         TextButton(
           onPressed: () {
             count = count + 1;
+
             print(count);
           },
           child: Text("Add"),
