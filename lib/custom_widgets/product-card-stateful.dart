@@ -7,9 +7,9 @@ class ProductCard extends StatefulWidget {
     required this.price,
     required this.imageUrl,
   });
-  var title;
-  var price;
-  var imageUrl;
+  final String title;
+  String price;
+  final String imageUrl;
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -20,16 +20,16 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey,
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       child: Row(children: [
-        Container(
+        SizedBox(
           width: 100,
-          child: Image.asset("${widget.imageUrl}"),
+          child: Image.asset(widget.imageUrl),
         ),
         Expanded(
             child: Column(
           children: [
-            Text("${widget.title}"),
+            Text(widget.title),
             Text("${widget.price}"),
             TextButton(
                 onPressed: () {
@@ -37,7 +37,7 @@ class _ProductCardState extends State<ProductCard> {
                     widget.price = widget.price * 2;
                   });
                 },
-                child: Text("Add")),
+                child: const Text("Add")),
           ],
         ))
       ]),

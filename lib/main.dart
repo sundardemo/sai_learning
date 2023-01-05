@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:learning/screens/count_stateful.dart';
-import 'package:learning/screens/count_stateless.dart';
-import 'package:learning/screens/home.dart';
-import 'package:learning/screens/inputs_example.dart';
-import 'package:learning/screens/list_view_example.dart';
+import 'package:learning/navigation/about.dart';
+import 'package:learning/navigation/bottom-nav.dart';
+import 'package:learning/navigation/contact.dart';
+import 'package:learning/navigation/home.dart';
+import 'package:learning/navigation/tabbar-example.dart';
 
 main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: InputExample(),
-      ),
-    ),
-  );
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => TabbarExample(),
+        '/about': (context) => AboutScreen(),
+        '/contact': (context) => ContactScreen(),
+      },
+    );
+  }
 }
