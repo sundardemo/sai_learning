@@ -13,7 +13,7 @@ class TabbarExample extends StatefulWidget {
 class _TabbarExampleState extends State<TabbarExample> {
   int _currentIndex = 0;
 
-  List _pages = [
+  List<Widget> _pages = [
     HomeScreen(),
     AboutScreen(),
     ContactScreen(),
@@ -24,18 +24,25 @@ class _TabbarExampleState extends State<TabbarExample> {
     return DefaultTabController(
       length: 3,
       initialIndex: _currentIndex,
-      child: TabBar(
-        tabs: [
-          Tab(
-            child: Text("Home"),
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                child: Text("Home"),
+              ),
+              Tab(
+                child: Text("About"),
+              ),
+              Tab(
+                child: Text("Contact"),
+              )
+            ],
           ),
-          Tab(
-            child: Text("About"),
-          ),
-          Tab(
-            child: Text("Contact"),
-          )
-        ],
+        ),
+        body: TabBarView(
+          children: _pages,
+        ),
       ),
     );
   }
